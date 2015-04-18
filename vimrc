@@ -80,3 +80,8 @@ map <C-n> :NERDTreeToggle<CR>
 
 "Key Mappings
 noremap <Leader>s :update<CR>
+
+"Installed via pathogen
+"REMEMBER THESE
+" NerdCommenter (Code commenting) - https://github.com/scrooloose/nerdcommenter.git
+" SnipMate (Code snippets) - https://github.com/garbas/vim-snipmate
