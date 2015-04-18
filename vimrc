@@ -20,7 +20,6 @@ Plugin 'nathanaelkane/vim-indent-guides'
 
 "Automate sometyping
 Plugin 'Raimondi/delimitMate'
-"imap <C-c> <CR><Esc>O 
 
 "Linting for javascript
 Plugin 'scrooloose/syntastic'
@@ -80,6 +79,8 @@ map <C-n> :NERDTreeToggle<CR>
 
 "Key Mappings
 noremap <Leader>s :update<CR>
+"note: the following map works with the delimitMate plugin
+imap <C-l> <CR><Esc>O 
 
 "Installed via pathogen
 "REMEMBER THESE
