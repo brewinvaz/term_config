@@ -47,10 +47,13 @@ set background=dark
 colorscheme distinguished
 
 "Add line numbers
-:set nu
+set nu
 
 "Case insensitive search
-:set ic
+":set ic
+
+"disable auto comment continuation
+au FileType * setlocal comments-=:// comments+=f://
 
 "size of a hard tabstop
 set tabstop=4
