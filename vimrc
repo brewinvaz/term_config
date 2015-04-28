@@ -71,6 +71,9 @@ set smarttab
 "always uses spaces instead of tab characters
 set expandtab
 
+"ejs filetype syntax highlighting
+au BufNewFile,BufRead *.ejs set filetype=html
+
 "pathogen - runtime path manipulation for plugins
 execute pathogen#infect()
 
