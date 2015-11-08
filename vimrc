@@ -92,3 +92,4 @@ imap <C-l> <CR><Esc>O
 "REMEMBER THESE
 " NerdCommenter (Code commenting) - https://github.com/scrooloose/nerdcommenter.git
 " SnipMate (Code snippets) - https://github.com/garbas/vim-snipmate
+" Vim-go (Golang) - https://github.com/fatih/vim-go.git
