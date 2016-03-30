@@ -1,95 +1,74 @@
-"Vundle configuration
-set nocompatible              " be iMproved, required
-filetype off                  " required
+"Pre-setup
+set nocompatible
+filetype off
 
-"Set the runtime path to include Vundle and initialize
+"Set runtime path to include Vundle
 set rtp+=~/.vim/bundle/Vundle.vim
+
+"Vundle - Plugin installation begin"
 call vundle#begin()
-"Alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
-"Let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+"Vundle installation - https://github.com/VundleVim/Vundle.vim
+Plugin 'VundleVim/Vundle.vim'
 
-"Plugins list
-Plugin 'jelera/vim-javascript-syntax'
+"Install plugins
+Bundle 'scrooloose/syntastic'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'nanotech/jellybeans.vim'
 
-"Indenting
-Plugin 'pangloss/vim-javascript'
-Plugin 'nathanaelkane/vim-indent-guides'
+"Vundle - Plugin installation end
+call vundle#end()
 
-"Automate sometyping
-Plugin 'Raimondi/delimitMate'
-
-"Linting for javascript
-Plugin 'scrooloose/syntastic'
-"let g:syntastic_check_on_open=1
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-"To ignore plugin indent changes, instead use:
-"filetype plugin on
-
-"Brief help
-":PluginList       - lists configured plugins
-":PluginInstall    - installs plugins; append `!` to update or just
-":PluginUpdate
-":PluginSearch foo - searches for foo; append `!` to refresh local cache
-":PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-"see :h vundle for more details or wiki for FAQ
-"Put your non-Plugin stuff after this line
-
-syntax on
-set t_Co=256
-set background=dark
-colorscheme distinguished
-
-"Add line numbers
-set nu
-
-"Case insensitive search
-":set ic
-
-"disable auto comment continuation
-au FileType * setlocal comments-=:// comments+=f://
-
-"size of a hard tabstop
-set tabstop=4
-"
-"size of an "indent"
-set shiftwidth=4
-
-"a combination of spaces and tabs are used to simulate tab stops at a width
-"other than the (hard)tabstop
-set softtabstop=4
-
-"make "tab" insert indents instead of tabs at the beginning of a line
-set smarttab
-
-"always uses spaces instead of tab characters
-set expandtab
-
-"ejs filetype syntax highlighting
-au BufNewFile,BufRead *.ejs set filetype=html
-
-"pathogen - runtime path manipulation for plugins
-execute pathogen#infect()
-
-"Load NERDTree at start-up
-"autocmd vimenter * NERDTree
-
-"NERDTree shortcut
+"NERDTree shortcut mapping
 map <C-n> :NERDTreeToggle<CR> 
 
-"Key Mappings
-noremap <Leader>s :update<CR>
-"note: the following map works with the delimitMate plugin
-imap <C-l> <CR><Esc>O 
+"Change leader to comma
+let mapleader=","
 
-"Installed via pathogen
-"REMEMBER THESE
-" NerdCommenter (Code commenting) - https://github.com/scrooloose/nerdcommenter.git
-" SnipMate (Code snippets) - https://github.com/garbas/vim-snipmate
-" Vim-go (Golang) - https://github.com/fatih/vim-go.git
+"Generic key mappings
+noremap <Leader>s :update<CR>
+
+"Generic settings
+filetype plugin indent on
+set number
+set cursorline
+set clipboard=unnamed
+set encoding=utf-8
+set nowrap
+set hlsearch
+set ignorecase
+set smartcase
+"set nowritebackup
+"set nobackup
+"set noswapfile
+
+"Limit syntax highlighting for long lines, avoid performance issues
+set synmaxcol=128 
+set ttyscroll=10
+
+"Syntax highlighting
+color jellybeans
+syntax enable
+
+"Quick ESC
+imap jj <ESC>
+
+"Tab settings
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+
+"Automatic formatting
+autocmd BufWritePre *.go :%s/\s\+$//e
+autocmd BufWritePre *.html :%s/\s\+$//e
+
+au BufNewFile * set noeol
+au BufRead,BufNewFile *.go set filetype=go
+
+"Format file
+nmap <leader>fef ggVG=
+
+"Quit with :Q, without saving
+command -nargs=0 Quit :qa!
