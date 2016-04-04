@@ -1,0 +1,3 @@
+GOPATH=$HOME/Git/go-projects
+GOBIN=$GOPATH/bin 
+PATH=$PATH:$GOBIN
