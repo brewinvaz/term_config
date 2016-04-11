@@ -1,3 +1,11 @@
-GOPATH=$HOME/Git/go-projects
-GOBIN=$GOPATH/bin 
-PATH=$PATH:$GOBIN
+export GOPATH=$HOME/Git/go-projects
+export GOBIN=$GOPATH/bin 
+export PATH=$PATH:$GOBIN
+
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad
+export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$(parse_git_branch) $"
+
+parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}

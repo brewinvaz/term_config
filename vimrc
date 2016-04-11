@@ -19,7 +19,6 @@ Plugin 'fatih/vim-go'
 Plugin 'vim-airline/vim-airline'
 
 " Color Scheme Plugins
-" Plugin 'nanotech/jellybeans.vim'
 Plugin 'morhetz/gruvbox'
 
 " Vundle - Plugin installation end
@@ -53,7 +52,6 @@ set synmaxcol=128
 set ttyscroll=10
 
 " Syntax highlighting
-" color jellybeans
 colorscheme gruvbox
 set background=dark
 syntax enable
@@ -73,8 +71,15 @@ let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
 
+" Easier buffer management
+map <leader>n :bn<cr>
+map <leader>p :bp<cr>
+
 " Tab between windows
 noremap <tab> <c-w><c-w>
+
+" NERDTree show hidden files
+let NERDTreeShowHidden=1
 
 " Automatic formatting
 autocmd BufWritePre *.html :%s/\s\+$//e
