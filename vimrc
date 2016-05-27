@@ -5,6 +5,9 @@ filetype off
 " Set runtime path to include Vundle
 set rtp+=~/.vim/bundle/Vundle.vim
 
+" Copy to system clipboard
+set clipboard=unnamed
+
 " Vundle - Plugin installation begin"
 call vundle#begin()
 
