@@ -20,21 +20,40 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'fatih/vim-go'
 Plugin 'vim-airline/vim-airline'
+Plugin 'Raimondi/delimitMate'
 
 " Color Scheme Plugins
 Plugin 'morhetz/gruvbox'
 
+" Javascript Plugins
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'pangloss/vim-javascript'
+Plugin 'nathanaelkane/vim-indent-guides'
+" https://github.com/maksimr/vim-jsbeautify
+Plugin 'maksimr/vim-jsbeautify'
+
 " Vundle - Plugin installation end
 call vundle#end()
-
-" NERDTree shortcut mapping
-map <C-n> :NERDTreeToggle<CR> 
 
 " Change leader to comma
 let mapleader=","
 
+" NERDTree shortcut mapping
+map <C-n> :NERDTreeToggle<CR> 
+
 " Generic key mappings
 noremap <Leader>s :update<CR>
+
+" DelimitMate - Insert new line
+imap <C-l> <CR><Esc>O
+
+" Beautify JS
+map <Leader>f :call JsBeautify()<CR>
+autocmd FileType javascript vnoremap <buffer>  <Leader>f :call RangeJsBeautify()<CR>
+autocmd FileType json vnoremap <buffer> <Leader>f :call RangeJsonBeautify()<CR>
+autocmd FileType jsx vnoremap <buffer> <Leader>f :call RangeJsxBeautify()<CR>
+autocmd FileType html vnoremap <buffer> <Leader>f :call RangeHtmlBeautify()<CR>
+autocmd FileType css vnoremap <buffer> <Leader>f :call RangeCSSBeautify()<CR>
 
 " Generic settings
 filetype plugin indent on
@@ -48,7 +67,7 @@ set ignorecase
 set smartcase
 " set nowritebackup
 " set nobackup
-" set noswapfile
+set noswapfile
 
 " Limit syntax highlighting for long lines, avoid performance issues
 set synmaxcol=128 
@@ -56,6 +75,7 @@ set ttyscroll=10
 
 " Syntax highlighting
 colorscheme gruvbox
+
 set background=dark
 syntax enable
 
