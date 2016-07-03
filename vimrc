@@ -88,6 +88,11 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 
+" Disable auto-commenting except for /*...*/
+inoremap <expr> <enter> getline('.') =~ '^\s*//' ? '<enter><esc>S' : '<enter>'
+nnoremap <expr> O getline('.') =~ '^\s*//' ? 'O<esc>S' : 'O'
+nnoremap <expr> o getline('.') =~ '^\s*//' ? 'o<esc>S' : 'o'
+
 " Airline settings
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
@@ -115,3 +120,6 @@ nmap <leader>fef ggVG=
 
 " Quit with :Q, without saving
 command -nargs=0 Quit :qa!
+
+" Source BufOnly
+source ~/.vimrc_bufonly 
