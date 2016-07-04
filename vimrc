@@ -31,6 +31,8 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'nathanaelkane/vim-indent-guides'
 " https://github.com/maksimr/vim-jsbeautify
 Plugin 'maksimr/vim-jsbeautify'
+" JSX Plugin
+Plugin 'mxw/vim-jsx'
 
 " Vundle - Plugin installation end
 call vundle#end()
@@ -54,6 +56,9 @@ autocmd FileType json vnoremap <buffer> <Leader>f :call RangeJsonBeautify()<CR>
 autocmd FileType jsx vnoremap <buffer> <Leader>f :call RangeJsxBeautify()<CR>
 autocmd FileType html vnoremap <buffer> <Leader>f :call RangeHtmlBeautify()<CR>
 autocmd FileType css vnoremap <buffer> <Leader>f :call RangeCSSBeautify()<CR>
+
+" Enable JSX code in .js files
+let g:jsx_ext_required = 0
 
 " Generic settings
 filetype plugin indent on
