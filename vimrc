@@ -114,6 +114,16 @@ noremap <tab> <c-w><c-w>
 " NERDTree show hidden files
 let NERDTreeShowHidden=1
 
+" Enable code folding
+set foldmethod=indent   
+set foldnestmax=10
+set nofoldenable
+set foldlevel=1
+
+" Space to toggle folds.
+nnoremap <Space> za
+vnoremap <Space> za
+
 " Automatic formatting
 autocmd BufWritePre *.html :%s/\s\+$//e
 
