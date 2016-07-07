@@ -50,12 +50,12 @@ noremap <Leader>s :update<CR>
 imap <C-l> <CR><Esc>O
 
 " Beautify JS
-map <Leader>f :call JsBeautify()<CR>
-autocmd FileType javascript vnoremap <buffer>  <Leader>f :call RangeJsBeautify()<CR>
-autocmd FileType json vnoremap <buffer> <Leader>f :call RangeJsonBeautify()<CR>
-autocmd FileType jsx vnoremap <buffer> <Leader>f :call RangeJsxBeautify()<CR>
-autocmd FileType html vnoremap <buffer> <Leader>f :call RangeHtmlBeautify()<CR>
-autocmd FileType css vnoremap <buffer> <Leader>f :call RangeCSSBeautify()<CR>
+map <Leader>b :call JsBeautify()<CR>
+autocmd FileType javascript vnoremap <buffer>  <Leader>b :call RangeJsBeautify()<CR>
+autocmd FileType json vnoremap <buffer> <Leader>b :call RangeJsonBeautify()<CR>
+autocmd FileType jsx vnoremap <buffer> <Leader>b :call RangeJsxBeautify()<CR>
+autocmd FileType html vnoremap <buffer> <Leader>b :call RangeHtmlBeautify()<CR>
+autocmd FileType css vnoremap <buffer> <Leader>b :call RangeCSSBeautify()<CR>
 
 " Enable JSX code in .js files
 let g:jsx_ext_required = 0
@@ -118,7 +118,7 @@ let NERDTreeShowHidden=1
 set foldmethod=indent   
 set foldnestmax=10
 set nofoldenable
-set foldlevel=1
+set foldlevel=0
 
 " Space to toggle folds.
 nnoremap <Space> za
