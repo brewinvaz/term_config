@@ -133,6 +133,14 @@ au BufRead,BufNewFile *.go set filetype=go
 " Format file
 nmap <leader>fef ggVG=
 
+" delete without yanking
+nnoremap <leader>d "_d
+vnoremap <leader>d "_d
+
+" replace currently selected text with default register
+" without yanking it
+vnoremap <leader>p "_dP
+
 " Quit with :Q, without saving
 command -nargs=0 Quit :qa!
 
