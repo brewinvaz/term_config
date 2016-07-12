@@ -44,18 +44,18 @@ let mapleader=","
 map <C-n> :NERDTreeToggle<CR> 
 
 " Generic key mappings
-noremap <Leader>s :update<CR>
+noremap <leader>s :update<CR>
 
 " DelimitMate - Insert new line
 imap <C-l> <CR><Esc>O
 
 " Beautify JS
-map <Leader>b :call JsBeautify()<CR>
-autocmd FileType javascript vnoremap <buffer>  <Leader>b :call RangeJsBeautify()<CR>
-autocmd FileType json vnoremap <buffer> <Leader>b :call RangeJsonBeautify()<CR>
-autocmd FileType jsx vnoremap <buffer> <Leader>b :call RangeJsxBeautify()<CR>
-autocmd FileType html vnoremap <buffer> <Leader>b :call RangeHtmlBeautify()<CR>
-autocmd FileType css vnoremap <buffer> <Leader>b :call RangeCSSBeautify()<CR>
+map <leader>rn :call JsBeautify()<CR>
+autocmd FileType javascript vnoremap <buffer>  <leader>rn :call RangeJsBeautify()<CR>
+autocmd FileType json vnoremap <buffer> <leader>rn :call RangeJsonBeautify()<CR>
+autocmd FileType jsx vnoremap <buffer> <leader>rn :call RangeJsxBeautify()<CR>
+autocmd FileType html vnoremap <buffer> <leader>rn :call RangeHtmlBeautify()<CR>
+autocmd FileType css vnoremap <buffer> <leader>rn :call RangeCSSBeautify()<CR>
 
 " Enable JSX code in .js files
 let g:jsx_ext_required = 0
@@ -106,7 +106,7 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 
 " Easier buffer management
 map <leader>n :bn<cr>
-map <leader>p :bp<cr>
+map <leader>b :bp<cr>
 
 " Tab between windows
 noremap <tab> <c-w><c-w>
