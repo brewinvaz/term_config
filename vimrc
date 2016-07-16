@@ -15,6 +15,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Install plugins
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'ternjs/tern_for_vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
@@ -29,7 +31,6 @@ Plugin 'morhetz/gruvbox'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'pangloss/vim-javascript'
 Plugin 'nathanaelkane/vim-indent-guides'
-" https://github.com/maksimr/vim-jsbeautify
 Plugin 'maksimr/vim-jsbeautify'
 " JSX Plugin
 Plugin 'mxw/vim-jsx'
@@ -42,6 +43,10 @@ let mapleader=","
 
 " NERDTree shortcut mapping
 map <C-n> :NERDTreeToggle<CR> 
+
+" Enable tern shortcuts and hints
+let g:tern_map_keys=1
+let g:tern_show_argument_hints='on_hold'
 
 " Generic key mappings
 noremap <leader>s :update<CR>
