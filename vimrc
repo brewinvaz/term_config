@@ -48,6 +48,9 @@ map <C-n> :NERDTreeToggle<CR>
 let g:tern_map_keys=1
 let g:tern_show_argument_hints='on_hold'
 
+" YouCompleteMe settings
+let g:ycm_autoclose_preview_window_after_completion=1
+
 " Generic key mappings
 noremap <leader>s :update<CR>
 
