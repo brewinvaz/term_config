@@ -99,7 +99,9 @@ set noswapfile
 
 " Limit syntax highlighting for long lines, avoid performance issues
 set synmaxcol=128 
-set ttyscroll=10
+if !has('nvim')
+    set ttyscroll=10
+endif
 
 " Syntax highlighting
 colorscheme gruvbox
