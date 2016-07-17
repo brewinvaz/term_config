@@ -15,8 +15,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Install plugins
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'ternjs/tern_for_vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
@@ -24,14 +22,23 @@ Plugin 'fatih/vim-go'
 Plugin 'vim-airline/vim-airline'
 Plugin 'Raimondi/delimitMate'
 
+" Auto-completion, snippet engine and snippets
+Plugin 'ervandew/supertab'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'ternjs/tern_for_vim'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+
 " Color Scheme Plugins
 Plugin 'morhetz/gruvbox'
+Plugin 'helino/vim-json'
 
 " Javascript Plugins
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'pangloss/vim-javascript'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'maksimr/vim-jsbeautify'
+
 " JSX Plugin
 Plugin 'mxw/vim-jsx'
 
@@ -44,15 +51,23 @@ let mapleader=","
 " NERDTree shortcut mapping
 map <C-n> :NERDTreeToggle<CR> 
 
+" Generic key mappings
+noremap <leader>s :update<CR>
+
 " Enable tern shortcuts and hints
 let g:tern_map_keys=1
 let g:tern_show_argument_hints='on_hold'
 
-" YouCompleteMe settings
+" YouCompleteMe and UltiSnips settings
+let g:SuperTabDefaultCompletionType    = '<C-n>'
+let g:SuperTabCrMapping                = 0
+let g:UltiSnipsExpandTrigger           = '<tab>'
+let g:UltiSnipsJumpForwardTrigger      = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger     = '<s-tab>'
+let g:UltiSnipsEditSplit="vertical"
+let g:ycm_key_list_select_completion   = ['<C-j>', '<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
 let g:ycm_autoclose_preview_window_after_completion=1
-
-" Generic key mappings
-noremap <leader>s :update<CR>
 
 " DelimitMate - Insert new line
 imap <C-l> <CR><Esc>O
@@ -78,8 +93,8 @@ set nowrap
 set hlsearch
 set ignorecase
 set smartcase
-" set nowritebackup
-" set nobackup
+set nowritebackup
+set nobackup
 set noswapfile
 
 " Limit syntax highlighting for long lines, avoid performance issues
@@ -88,12 +103,11 @@ set ttyscroll=10
 
 " Syntax highlighting
 colorscheme gruvbox
-
 set background=dark
 syntax enable
 
 " Quick ESC
-imap jj <ESC>
+imap jk <ESC>
 
 " Tab settings
 set tabstop=4
