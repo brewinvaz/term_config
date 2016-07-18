@@ -4,11 +4,6 @@ filetype off
 
 " Set runtime path to include Vundle
 set rtp+=~/.vim/bundle/Vundle.vim
-
-" Copy to system clipboard
-set clipboard=unnamed
-
-" Vundle - Plugin installation begin"
 call vundle#begin()
 
 " Vundle installation - https://github.com/VundleVim/Vundle.vim
@@ -21,6 +16,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'fatih/vim-go'
 Plugin 'vim-airline/vim-airline'
 Plugin 'Raimondi/delimitMate'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 " Auto-completion, snippet engine and snippets
 Plugin 'ervandew/supertab'
@@ -42,46 +38,14 @@ Plugin 'maksimr/vim-jsbeautify'
 " JSX Plugin
 Plugin 'mxw/vim-jsx'
 
+" Git Plugin
+Plugin 'tpope/vim-fugitive'
+
 " Vundle - Plugin installation end
 call vundle#end()
 
 " Change leader to comma
 let mapleader=","
-
-" NERDTree shortcut mapping
-map <C-n> :NERDTreeToggle<CR> 
-
-" Generic key mappings
-noremap <leader>s :update<CR>
-
-" Enable tern shortcuts and hints
-let g:tern_map_keys=1
-let g:tern_show_argument_hints='on_hold'
-
-" YouCompleteMe and UltiSnips settings
-let g:SuperTabDefaultCompletionType    = '<C-n>'
-let g:SuperTabCrMapping                = 0
-let g:UltiSnipsExpandTrigger           = '<tab>'
-let g:UltiSnipsJumpForwardTrigger      = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger     = '<s-tab>'
-let g:UltiSnipsEditSplit="vertical"
-let g:ycm_key_list_select_completion   = ['<C-j>', '<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
-let g:ycm_autoclose_preview_window_after_completion=1
-
-" DelimitMate - Insert new line
-imap <C-l> <CR><Esc>O
-
-" Beautify JS
-map <leader>rn :call JsBeautify()<CR>
-autocmd FileType javascript vnoremap <buffer>  <leader>rn :call RangeJsBeautify()<CR>
-autocmd FileType json vnoremap <buffer> <leader>rn :call RangeJsonBeautify()<CR>
-autocmd FileType jsx vnoremap <buffer> <leader>rn :call RangeJsxBeautify()<CR>
-autocmd FileType html vnoremap <buffer> <leader>rn :call RangeHtmlBeautify()<CR>
-autocmd FileType css vnoremap <buffer> <leader>rn :call RangeCSSBeautify()<CR>
-
-" Enable JSX code in .js files
-let g:jsx_ext_required = 0
 
 " Generic settings
 filetype plugin indent on
@@ -97,6 +61,18 @@ set nowritebackup
 set nobackup
 set noswapfile
 
+" Quick ESC
+imap jk <ESC>
+
+" Tab settings
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+
+" Save file
+noremap <leader>s :update<CR>
+
 " Limit syntax highlighting for long lines, avoid performance issues
 set synmaxcol=128 
 if !has('nvim')
@@ -108,14 +84,57 @@ colorscheme gruvbox
 set background=dark
 syntax enable
 
-" Quick ESC
-imap jk <ESC>
+" NERDTree settings
+map <C-n> :NERDTreeToggle<CR> 
+let NERDTreeShowHidden = 1
 
-" Tab settings
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set expandtab
+" Tab between windows
+noremap <tab> <c-w><c-w>
+
+" Delete without yanking
+nnoremap <leader>d "_d
+vnoremap <leader>d "_d
+
+" Replace currently selected text with default register
+" without yanking it
+vnoremap <leader>p "_dP
+
+" Ctrlp settings
+nmap <silent> <leader>r :CtrlPBuffer<cr>
+let g:ctrlp_map = '<leader>t'
+let g:ctrlp_dotfiles = 1
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+
+" Enable tern shortcuts and hints
+let g:tern_map_keys = 1
+let g:tern_show_argument_hints = 'on_hold'
+
+" YouCompleteMe and UltiSnips settings
+let g:SuperTabDefaultCompletionType    = '<C-n>'
+let g:SuperTabCrMapping                = 0
+let g:UltiSnipsExpandTrigger           = '<tab>'
+let g:UltiSnipsJumpForwardTrigger      = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger     = '<s-tab>'
+let g:UltiSnipsEditSplit               = "vertical"
+let g:ycm_key_list_select_completion   = ['<C-j>', '<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
+let g:ycm_autoclose_preview_window_after_completion = 1
+
+" DelimitMate - Insert new line
+imap <C-l> <CR><Esc>O
+
+" Beautify JS
+map <leader>rn :call JsBeautify()<CR>
+autocmd FileType javascript vnoremap <buffer> <leader>rn :call RangeJsBeautify()<CR>
+autocmd FileType json vnoremap <buffer> <leader>rn :call RangeJsonBeautify()<CR>
+autocmd FileType jsx vnoremap <buffer> <leader>rn :call RangeJsxBeautify()<CR>
+autocmd FileType html vnoremap <buffer> <leader>rn :call RangeHtmlBeautify()<CR>
+autocmd FileType css vnoremap <buffer> <leader>rn :call RangeCSSBeautify()<CR>
+
+" Enable JSX code in .js files
+let g:jsx_ext_required = 0
 
 " Disable auto-commenting except for /*...*/
 inoremap <expr> <enter> getline('.') =~ '^\s*//' ? '<enter><esc>S' : '<enter>'
@@ -128,15 +147,16 @@ let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
 
+" Fugitive settings
+nmap <silent> <leader>gs :Gstatus<cr>
+nmap <leader>ge :Gedit<cr>
+nmap <silent><leader>gr :Gread<cr>
+nmap <silent><leader>gb :Gblame<cr>
+nmap <silent><leader>gd :Gdiff<cr>
+
 " Easier buffer management
 map <leader>n :bn<cr>
 map <leader>b :bp<cr>
-
-" Tab between windows
-noremap <tab> <c-w><c-w>
-
-" NERDTree show hidden files
-let NERDTreeShowHidden=1
 
 " Enable code folding
 set foldmethod=indent   
@@ -150,23 +170,14 @@ vnoremap <Space> za
 
 " Automatic formatting
 autocmd BufWritePre *.html :%s/\s\+$//e
-
 au BufNewFile * set noeol
 au BufRead,BufNewFile *.go set filetype=go
 
 " Format file
 nmap <leader>fef ggVG=
 
-" delete without yanking
-nnoremap <leader>d "_d
-vnoremap <leader>d "_d
-
-" replace currently selected text with default register
-" without yanking it
-vnoremap <leader>p "_dP
-
 " Quit with :Q, without saving
-command -nargs=0 Quit :qa!
+command! -nargs=0 Quit :qa!
 
 " Source BufOnly
 source ~/.vimrc_bufonly 
