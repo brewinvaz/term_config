@@ -87,6 +87,8 @@ syntax enable
 " NERDTree settings
 map <C-n> :NERDTreeToggle<CR> 
 let NERDTreeShowHidden = 1
+" expand to the path of the file in the current buffer
+nmap <silent> <leader>y :NERDTreeFind<cr>
 
 " Tab between windows
 noremap <tab> <c-w><c-w>
