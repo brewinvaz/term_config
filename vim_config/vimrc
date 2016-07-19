@@ -71,7 +71,7 @@ set shiftwidth=4
 set expandtab
 
 " Save file
-noremap <leader>s :update<CR>
+noremap <leader>, :update<CR>
 
 " Limit syntax highlighting for long lines, avoid performance issues
 set synmaxcol=128 
