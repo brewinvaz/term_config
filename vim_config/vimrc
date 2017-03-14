@@ -35,11 +35,15 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'maksimr/vim-jsbeautify'
 
-" JSX Plugin
+" JSX Plugins
 Plugin 'mxw/vim-jsx'
 
-" Git Plugin
+" Rust Plugins
+Plugin 'rust-lang/rust.vim'
+
+" Git Plugins
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
 
 " Vundle - Plugin installation end
 call vundle#end()
