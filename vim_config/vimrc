@@ -27,7 +27,7 @@ Plugin 'honza/vim-snippets'
 
 " Color Scheme Plugins
 Plugin 'morhetz/gruvbox'
-Plugin 'helino/vim-json'
+Plugin 'elzr/vim-json'
 
 " Javascript Plugins
 Plugin 'jelera/vim-javascript-syntax'
