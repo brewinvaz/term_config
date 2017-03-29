@@ -127,6 +127,7 @@ let g:UltiSnipsEditSplit               = "vertical"
 let g:ycm_key_list_select_completion   = ['<C-j>', '<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
 let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_server_python_interpreter    = '/usr/bin/python'
 
 " DelimitMate - Insert new line
 imap <C-l> <CR><Esc>O
@@ -141,6 +142,9 @@ autocmd FileType css vnoremap <buffer> <leader>rn :call RangeCSSBeautify()<CR>
 
 " Enable JSX code in .js files
 let g:jsx_ext_required = 0
+
+" Rust settings
+let g:rustfmt_autosave = 1
 
 " Disable auto-commenting except for /*...*/
 inoremap <expr> <enter> getline('.') =~ '^\s*//' ? '<enter><esc>S' : '<enter>'
