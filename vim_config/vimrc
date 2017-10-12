@@ -13,7 +13,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'fatih/vim-go'
+" Plugin 'fatih/vim-go'
 Plugin 'vim-airline/vim-airline'
 Plugin 'Raimondi/delimitMate'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -83,6 +83,10 @@ if !has('nvim')
     set ttyscroll=10
 endif
 
+" Other NeoVim Settings
+let g:python_host_prog = '/usr/local/bin/python'
+let g:python3_host_prog = '/usr/local/bin/python3'
+
 " Syntax highlighting
 colorscheme gruvbox
 set background=dark
@@ -127,7 +131,7 @@ let g:UltiSnipsEditSplit               = "vertical"
 let g:ycm_key_list_select_completion   = ['<C-j>', '<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
 let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_server_python_interpreter    = '/usr/bin/python'
+let g:ycm_server_python_interpreter    = '/usr/local/bin/python3'
 
 " DelimitMate - Insert new line
 imap <C-l> <CR><Esc>O
@@ -182,12 +186,10 @@ vnoremap <Space> za
 autocmd BufWritePre *.html :%s/\s\+$//e
 au BufNewFile * set noeol
 au BufRead,BufNewFile *.go set filetype=go
+au BufRead,BufNewFile *.rs set filetype=rust
 
 " Format file
 nmap <leader>fef ggVG=
 
 " Quit with :Q, without saving
 command! -nargs=0 Quit :qa!
-
-" Source BufOnly
-source ~/.vimrc_bufonly 
