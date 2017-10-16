@@ -18,6 +18,9 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'Raimondi/delimitMate'
 Plugin 'ctrlpvim/ctrlp.vim'
 
+" Tmux Plugin
+Plugin 'christoomey/vim-tmux-navigator'
+
 " Auto-completion, snippet engine and snippets
 Plugin 'ervandew/supertab'
 Plugin 'Valloric/YouCompleteMe'
@@ -90,7 +93,14 @@ let g:python3_host_prog = '/usr/local/bin/python3'
 " Syntax highlighting
 colorscheme gruvbox
 set background=dark
+set t_Co=256
 syntax enable
+
+" Split navigation
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
 
 " NERDTree settings
 map <C-n> :NERDTreeToggle<CR> 
@@ -128,7 +138,7 @@ let g:UltiSnipsExpandTrigger           = '<tab>'
 let g:UltiSnipsJumpForwardTrigger      = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger     = '<s-tab>'
 let g:UltiSnipsEditSplit               = "vertical"
-" Python 2.x interpreter
+" YCM Python 2.x interpreter
 let g:ycm_server_python_interpreter    = '/usr/local/bin/python'
 let g:ycm_key_list_select_completion   = ['<C-j>', '<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
