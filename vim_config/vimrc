@@ -108,7 +108,7 @@ nnoremap <c-l> <c-w>l
 " NERDTree settings
 map <C-n> :NERDTreeToggle<CR> 
 let NERDTreeShowHidden = 1
-let g:NERDTreeWinSize = 20
+let g:NERDTreeWinSize = 31
 " expand to the path of the file in the current buffer
 nmap <silent> <leader>y :NERDTreeFind<cr>
 
