@@ -43,6 +43,9 @@ Plugin 'mxw/vim-jsx'
 
 " Rust Plugins
 Plugin 'rust-lang/rust.vim'
+" Install racer separately
+" > cargo install racer
+Plugin 'racer-rust/vim-racer'
 
 " Git Plugins
 Plugin 'tpope/vim-fugitive'
@@ -163,6 +166,8 @@ let g:jsx_ext_required = 0
 
 " Rust settings
 let g:rustfmt_autosave = 1
+let g:racer_cmd = "~/.cargo/bin/racer"
+let g:racer_experimental_completer = 1
 
 " Disable auto-commenting except for /*...*/
 inoremap <expr> <enter> getline('.') =~ '^\s*//' ? '<enter><esc>S' : '<enter>'
@@ -185,6 +190,7 @@ nmap <silent><leader>gd :Gdiff<cr>
 " Easier buffer management
 map <leader>n :bn<cr>
 map <leader>b :bp<cr>
+map <leader>q :bp\|bd #<cr>
 
 " Enable code folding
 set foldmethod=indent   
