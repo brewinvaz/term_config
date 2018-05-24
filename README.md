@@ -24,4 +24,4 @@ source ~/.vimrc
 
 iTerm2
 ------
-1. Import iterm2-gruvbox colorscheme
+1. Import gruvbox-dark colorscheme
