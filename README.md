@@ -18,3 +18,7 @@ set packpath+=~/.vim
 source ~/.vimrc
 ```
 4. In nvim, run :CheckHealth and resolve any dependencies
+
+iTerm2
+------
+1. Import iterm2-gruvbox colorscheme
