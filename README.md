@@ -12,7 +12,8 @@ Neovim
 1. Install Neovim - https://github.com/neovim/neovim/wiki/Installing-Neovim
 2. Create init.vim under ~/.config/nvim 
 3. Add the following to init.vim to source vimrc into nvim
-``` set runtimepath+=~/.vim,~/.vim/after
+```sh
+set runtimepath+=~/.vim,~/.vim/after
 set packpath+=~/.vim
 source ~/.vimrc
 ```
