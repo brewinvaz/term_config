@@ -5,7 +5,10 @@ Vim Configuration
 -----------------
 1. Copy vimrc to $HOME
 2. Copy BufOnly.vim to $HOME
-3. Install Vundle manually - git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim 
+3. Install Vundle manually 
+```sh
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim 
+```
 
 Neovim
 ------
