@@ -11,7 +11,7 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
 4. Comment colorscheme so that vimrc loads correctly
 ```sh
-colorscheme gruvbox
+" colorscheme gruvbox
 ```
 5. Install Plugins
 
