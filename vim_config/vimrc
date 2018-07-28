@@ -17,6 +17,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'vim-airline/vim-airline'
 Plugin 'Raimondi/delimitMate'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'tmhedberg/SimpylFold'
 
 " Tmux Plugin
 Plugin 'christoomey/vim-tmux-navigator'
@@ -46,6 +47,10 @@ Plugin 'rust-lang/rust.vim'
 " Install racer separately
 " > cargo install racer
 Plugin 'racer-rust/vim-racer'
+
+" Python Plugins
+" PEP8 checker
+Plugin 'nvie/vim-flake8'
 
 " Git Plugins
 Plugin 'tpope/vim-fugitive'
@@ -77,11 +82,19 @@ inoremap jk <esc>
 " Save file
 noremap <leader>, :update<cr>
 
-" Tab settings
+" Tab + file settings
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
+set textwidth=79
 set expandtab
+set autoindent
+
+" Other file type specific settings
+au BufNewFile,BufRead *.py
+    \ set fileformat=unix
+" Flag unnecessary whitespace
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 " Limit syntax highlighting for long lines, avoid performance issues
 set synmaxcol=128 
@@ -98,6 +111,9 @@ colorscheme gruvbox
 set background=dark
 set t_Co=256
 syntax enable
+" Make python code pretty
+let python_highlight_all=1
+syntax on
 
 " Split config and navigation
 set splitbelow
@@ -139,6 +155,11 @@ vnoremap <leader>d "_d
 " without yanking it
 vnoremap <leader>p "_dP
 
+" Disable auto-commenting except for /*...*/
+inoremap <expr> <enter> getline('.') =~ '^\s*//' ? '<enter><esc>S' : '<enter>'
+nnoremap <expr> O getline('.') =~ '^\s*//' ? 'O<esc>S' : 'O'
+nnoremap <expr> o getline('.') =~ '^\s*//' ? 'o<esc>S' : 'o'
+
 " Ctrlp settings
 nmap <silent> <leader>r :CtrlPBuffer<cr>
 let g:ctrlp_map = '<leader>t'
@@ -165,6 +186,7 @@ let g:ycm_key_list_previous_completion = ['<c-k>', '<c-p>', '<up>']
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_confirm_extra_conf = 0
 nnoremap <leader>jd :YcmCompleter GoTo<cr>
+map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<cr>
 
 " DelimitMate - Insert new line
 imap <c-l> <cr><esc>O
@@ -185,10 +207,15 @@ let g:rustfmt_autosave = 1
 let g:racer_cmd = "~/.cargo/bin/racer"
 let g:racer_experimental_completer = 1
 
-" Disable auto-commenting except for /*...*/
-inoremap <expr> <enter> getline('.') =~ '^\s*//' ? '<enter><esc>S' : '<enter>'
-nnoremap <expr> O getline('.') =~ '^\s*//' ? 'O<esc>S' : 'O'
-nnoremap <expr> o getline('.') =~ '^\s*//' ? 'o<esc>S' : 'o'
+" Python with virtualenv support
+py << EOF
+import os
+import sys
+if 'VIRTUAL_ENV' in os.environ:
+  project_base_dir = os.environ['VIRTUAL_ENV']
+  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+  execfile(activate_this, dict(__file__=activate_this))
+EOF
 
 " Airline settings
 " Enable the list of buffers
