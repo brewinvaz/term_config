@@ -9,6 +9,15 @@ Vim Configuration
 ```sh
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim 
 ```
+4. Comment colorscheme so that vimrc loads correctly
+```sh
+colorscheme gruvbox
+```
+5. Install Plugins
+
+```sh
+:Plugin Install
+```
 
 Neovim
 ------
@@ -20,7 +29,10 @@ set runtimepath+=~/.vim,~/.vim/after
 set packpath+=~/.vim
 source ~/.vimrc
 ```
-4. In nvim, run :CheckHealth and resolve any dependencies
+4. In nvim, check health of the installation and resolve any dependencies
+```sh
+:CheckHealth
+```
 
 iTerm2
 ------
