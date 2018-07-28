@@ -1,10 +1,8 @@
-" FIRST INSTALL VUNDLE MANUALLY BY CLONING THE GIT REPO
-
 " Pre-setup
 set nocompatible
 filetype off
 
-" Set runtime path to include Vundle
+" Set runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -74,16 +72,16 @@ set nobackup
 set noswapfile
 
 " Quick ESC
-imap jk <ESC>
+inoremap jk <esc>
+
+" Save file
+noremap <leader>, :update<cr>
 
 " Tab settings
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
-
-" Save file
-noremap <leader>, :update<CR>
 
 " Limit syntax highlighting for long lines, avoid performance issues
 set synmaxcol=128 
@@ -101,14 +99,30 @@ set background=dark
 set t_Co=256
 syntax enable
 
-" Split navigation
+" Split config and navigation
+set splitbelow
+set splitright
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
+" Enable code folding
+set foldmethod=indent   
+set foldlevel=99
+set foldnestmax=10
+set nofoldenable
+
+" Space to toggle folds.
+nnoremap <space> za
+
+" Easier buffer management
+noremap <leader>n :bn<cr>
+noremap <leader>b :bp<cr>
+noremap <leader>q :bp\|bd #<cr>
+
 " NERDTree settings
-map <C-n> :NERDTreeToggle<CR> 
+map <c-n> :NERDTreeToggle<cr> 
 let NERDTreeShowHidden = 1
 let g:NERDTreeWinSize = 31
 " expand to the path of the file in the current buffer
@@ -138,30 +152,30 @@ let g:tern_map_keys = 1
 let g:tern_show_argument_hints = 'on_hold'
 
 " YouCompleteMe and UltiSnips settings
-let g:SuperTabDefaultCompletionType    = '<C-n>'
+let g:SuperTabDefaultCompletionType    = '<c-n>'
 let g:SuperTabCrMapping                = 0
 let g:UltiSnipsExpandTrigger           = '<tab>'
 let g:UltiSnipsJumpForwardTrigger      = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger     = '<s-tab>'
 let g:UltiSnipsEditSplit               = "vertical"
-" YCM Python 2.x interpreter
-let g:ycm_server_python_interpreter    = '/usr/local/bin/python'
-let g:ycm_key_list_select_completion   = ['<C-j>', '<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-k>', '<C-p>', '<Up>']
+" YCM Python 3.x interpreter
+let g:ycm_server_python_interpreter    = '/usr/local/bin/python3'
+let g:ycm_key_list_select_completion   = ['<c-j>', '<c-n>', '<down>']
+let g:ycm_key_list_previous_completion = ['<c-k>', '<c-p>', '<up>']
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_confirm_extra_conf = 0
-nnoremap <leader>jd :YcmCompleter GoTo<CR>
+nnoremap <leader>jd :YcmCompleter GoTo<cr>
 
 " DelimitMate - Insert new line
-imap <C-l> <CR><Esc>O
+imap <c-l> <cr><esc>O
 
 " Beautify JS
-map <leader>rn :call JsBeautify()<CR>
-autocmd FileType javascript vnoremap <buffer> <leader>rn :call RangeJsBeautify()<CR>
-autocmd FileType json vnoremap <buffer> <leader>rn :call RangeJsonBeautify()<CR>
-autocmd FileType jsx vnoremap <buffer> <leader>rn :call RangeJsxBeautify()<CR>
-autocmd FileType html vnoremap <buffer> <leader>rn :call RangeHtmlBeautify()<CR>
-autocmd FileType css vnoremap <buffer> <leader>rn :call RangeCSSBeautify()<CR>
+map <leader>rn :call JsBeautify()<cr>
+autocmd FileType javascript vnoremap <buffer> <leader>rn :call RangeJsBeautify()<cr>
+autocmd FileType json vnoremap <buffer> <leader>rn :call RangeJsonBeautify()<cr>
+autocmd FileType jsx vnoremap <buffer> <leader>rn :call RangeJsxBeautify()<cr>
+autocmd FileType html vnoremap <buffer> <leader>rn :call RangeHtmlBeautify()<cr>
+autocmd FileType css vnoremap <buffer> <leader>rn :call RangeCSSBeautify()<cr>
 
 " Enable JSX code in .js files
 let g:jsx_ext_required = 0
@@ -188,21 +202,6 @@ nmap <leader>ge :Gedit<cr>
 nmap <silent><leader>gr :Gread<cr>
 nmap <silent><leader>gb :Gblame<cr>
 nmap <silent><leader>gd :Gdiff<cr>
-
-" Easier buffer management
-map <leader>n :bn<cr>
-map <leader>b :bp<cr>
-map <leader>q :bp\|bd #<cr>
-
-" Enable code folding
-set foldmethod=indent   
-set foldnestmax=10
-set nofoldenable
-set foldlevel=0
-
-" Space to toggle folds.
-nnoremap <Space> za
-vnoremap <Space> za
 
 " Automatic formatting
 autocmd BufWritePre *.html :%s/\s\+$//e
