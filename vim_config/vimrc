@@ -13,7 +13,6 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
-" Plugin 'fatih/vim-go'
 Plugin 'vim-airline/vim-airline'
 Plugin 'Raimondi/delimitMate'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -47,6 +46,9 @@ Plugin 'rust-lang/rust.vim'
 " Install racer separately
 " > cargo install racer
 Plugin 'racer-rust/vim-racer'
+
+" Go Plugins
+" Plugin 'fatih/vim-go'
 
 " Python Plugins
 " PEP8 checker
@@ -94,6 +96,7 @@ set autoindent
 au BufNewFile,BufRead *.py
     \ set fileformat=unix
 " Flag unnecessary whitespace
+highlight BadWhitespace ctermbg=red guibg=red
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 " Limit syntax highlighting for long lines, avoid performance issues
@@ -231,7 +234,7 @@ nmap <silent><leader>gb :Gblame<cr>
 nmap <silent><leader>gd :Gdiff<cr>
 
 " Automatic formatting
-autocmd BufWritePre *.html :%s/\s\+$//e
+au BufWritePre *.html :%s/\s\+$//e
 au BufNewFile * set noeol
 au BufRead,BufNewFile *.go set filetype=go
 au BufRead,BufNewFile *.rs set filetype=rust
