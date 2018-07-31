@@ -196,11 +196,11 @@ imap <c-l> <cr><esc>O
 
 " Beautify JS
 map <leader>rn :call JsBeautify()<cr>
-autocmd FileType javascript vnoremap <buffer> <leader>rn :call RangeJsBeautify()<cr>
-autocmd FileType json vnoremap <buffer> <leader>rn :call RangeJsonBeautify()<cr>
-autocmd FileType jsx vnoremap <buffer> <leader>rn :call RangeJsxBeautify()<cr>
-autocmd FileType html vnoremap <buffer> <leader>rn :call RangeHtmlBeautify()<cr>
-autocmd FileType css vnoremap <buffer> <leader>rn :call RangeCSSBeautify()<cr>
+au FileType javascript vnoremap <buffer> <leader>rn :call RangeJsBeautify()<cr>
+au FileType json vnoremap <buffer> <leader>rn :call RangeJsonBeautify()<cr>
+au FileType jsx vnoremap <buffer> <leader>rn :call RangeJsxBeautify()<cr>
+au FileType html vnoremap <buffer> <leader>rn :call RangeHtmlBeautify()<cr>
+au FileType css vnoremap <buffer> <leader>rn :call RangeCSSBeautify()<cr>
 
 " Enable JSX code in .js files
 let g:jsx_ext_required = 0
