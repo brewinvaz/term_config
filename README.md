@@ -1,23 +1,9 @@
 Steps to follow
 ===============
 
-Vim Configuration
------------------
-1. Copy vimrc to $HOME
-2. Copy BufOnly.vim to $HOME
-3. Install Vundle manually 
-```sh
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim 
-```
-4. Comment colorscheme so that vimrc loads correctly
-```sh
-" colorscheme gruvbox
-```
-5. Install Plugins
-
-```sh
-:Plugin Install
-```
+iTerm2
+------
+1. Import gruvbox-dark colorscheme
 
 Neovim
 ------
@@ -34,6 +20,20 @@ source ~/.vimrc
 :CheckHealth
 ```
 
-iTerm2
-------
-1. Import gruvbox-dark colorscheme
+Vim Configuration
+-----------------
+1. Copy vimrc to $HOME
+2. Copy BufOnly.vim to $HOME
+3. Install Vundle manually 
+```sh
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim 
+```
+4. Comment colorscheme so that vimrc loads correctly
+```sh
+" colorscheme gruvbox
+```
+5. Install Plugins
+```sh
+:PluginInstall
+```
+6. Complete YouCompleteMe installation (https://github.com/Valloric/YouCompleteMe)
