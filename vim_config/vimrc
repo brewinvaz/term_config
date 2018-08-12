@@ -53,6 +53,7 @@ Plugin 'racer-rust/vim-racer'
 " Python Plugins
 " PEP8 checker
 Plugin 'nvie/vim-flake8'
+Plugin 'vim-scripts/indentpython.vim'
 
 " Git Plugins
 Plugin 'tpope/vim-fugitive'
@@ -77,6 +78,7 @@ set smartcase
 set nowritebackup
 set nobackup
 set noswapfile
+set inccommand=split
 
 " Quick ESC
 inoremap jk <esc>
