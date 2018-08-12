@@ -39,6 +39,13 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 6. Complete YouCompleteMe installation (https://github.com/Valloric/YouCompleteMe)
 
 
+Flake8 Config (Python Projects)
+-------------------------------
+1. Copy flake8 to the user's home directory
+```sh
+cp flake8 $HOME/.config/flake8
+```
+
 Dash
 ----
 1. Install Dash for documentation (Vim integration only works on Mac)
