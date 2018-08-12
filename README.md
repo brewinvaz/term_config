@@ -37,3 +37,9 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 :PluginInstall
 ```
 6. Complete YouCompleteMe installation (https://github.com/Valloric/YouCompleteMe)
+
+
+Dash
+----
+1. Install Dash for documentation (Vim integration only works on Mac)
+2. Go to https://kapeli.com/dash and download Dash
