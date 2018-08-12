@@ -43,3 +43,4 @@ Dash
 ----
 1. Install Dash for documentation (Vim integration only works on Mac)
 2. Go to https://kapeli.com/dash and download Dash
+3. Vim plugin - https://github.com/rizzatti/dash.vim
