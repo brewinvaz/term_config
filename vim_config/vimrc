@@ -18,6 +18,9 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tmhedberg/SimpylFold'
 
+" Documentation
+Plugin 'rizzatti/dash.vim'
+
 " Tmux Plugin
 Plugin 'christoomey/vim-tmux-navigator'
 
@@ -148,6 +151,8 @@ let NERDTreeShowHidden = 1
 let g:NERDTreeWinSize = 31
 " expand to the path of the file in the current buffer
 nmap <silent> <leader>y :NERDTreeFind<cr>
+" ignore files in NERDTree
+let NERDTreeIgnore=['\.DS_Store', '\~$']
 
 " Tab between windows
 noremap <tab> <c-w><c-w>
@@ -195,6 +200,31 @@ let g:ycm_confirm_extra_conf = 0
 nnoremap <leader>jd :YcmCompleter GoTo<cr>
 map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<cr>
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" This section is required to ensure that YCM can 
+" find virtualenvs that were created by Pipenv.
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Point YCM to the Pipenv created virtualenv, if possible
+" At first, get the output of 'pipenv --venv' command.
+let pipenv_venv_path = system('pipenv --venv')
+" The above system() call produces a non zero exit code whenever
+" a proper virtual environment has not been found.
+" So, second, we only point YCM to the virtual environment when
+" the call to 'pipenv --venv' was successful.
+" Remember, that 'pipenv --venv' only points to the root directory
+" of the virtual environment, so we have to append a full path to
+" the python executable.
+if shell_error == 0
+  let venv_path = substitute(pipenv_venv_path, '\n', '', '')
+  let g:ycm_python_binary_path = venv_path . '/bin/python'
+else
+  let g:ycm_python_binary_path = 'python'
+endif
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " DelimitMate - Insert new line
 imap <c-l> <cr><esc>O
 
@@ -213,16 +243,6 @@ let g:jsx_ext_required = 0
 let g:rustfmt_autosave = 1
 let g:racer_cmd = "~/.cargo/bin/racer"
 let g:racer_experimental_completer = 1
-
-" Python with virtualenv support
-py << EOF
-import os
-import sys
-if 'VIRTUAL_ENV' in os.environ:
-  project_base_dir = os.environ['VIRTUAL_ENV']
-  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-  execfile(activate_this, dict(__file__=activate_this))
-EOF
 
 " Airline settings
 " Enable the list of buffers
