@@ -18,6 +18,9 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tmhedberg/SimpylFold'
 
+" Find in files plugin
+Plugin 'mileszs/ack.vim'
+
 " Documentation
 Plugin 'rizzatti/dash.vim'
 
@@ -119,6 +122,8 @@ colorscheme gruvbox
 set background=dark
 set t_Co=256
 syntax enable
+" Shortcut to remove highlighted search results
+map <esc> :noh<cr>
 " Make python code pretty
 let python_highlight_all=1
 syntax on
@@ -197,8 +202,11 @@ let g:ycm_key_list_select_completion   = ['<c-j>', '<c-n>', '<down>']
 let g:ycm_key_list_previous_completion = ['<c-k>', '<c-p>', '<up>']
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_confirm_extra_conf = 0
-nnoremap <leader>jd :YcmCompleter GoTo<cr>
-map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<cr>
+nnoremap <leader>md :YcmCompleter GetDoc<cr>
+nnoremap <leader>mg :YcmCompleter GoTo<cr>
+nnoremap <leader>mc :YcmCompleter GoToDeclaration<cr>
+nnoremap <leader>mf :YcmCompleter GoToDefinition<cr>
+nnoremap <leader>mr :YcmCompleter GoToReferences<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " This section is required to ensure that YCM can 
