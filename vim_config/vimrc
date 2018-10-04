@@ -84,7 +84,9 @@ set smartcase
 set nowritebackup
 set nobackup
 set noswapfile
-set inccommand=split
+if has('nvim')
+    set inccommand=split
+endif
 
 " Quick ESC
 inoremap jk <esc>
