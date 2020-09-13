@@ -120,7 +120,7 @@ endif
 
 " Other NeoVim Settings
 " let g:python_host_prog = '/usr/bin/python'
-let g:python3_host_prog = '/usr/local/bin/python3'
+let g:python3_host_prog = '/usr/bin/python3'
 
 " Syntax highlighting
 colorscheme gruvbox
@@ -202,7 +202,7 @@ let g:UltiSnipsJumpForwardTrigger      = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger     = '<s-tab>'
 let g:UltiSnipsEditSplit               = "vertical"
 " YCM Python 3.x interpreter
-let g:ycm_server_python_interpreter    = '/usr/local/bin/python3'
+let g:ycm_server_python_interpreter    = '/usr/bin/python3'
 let g:ycm_key_list_select_completion   = ['<c-n>', '<down>']
 let g:ycm_key_list_previous_completion = ['<c-p>', '<up>']
 let g:ycm_key_list_accept_completion = ['<c-y>']
@@ -276,6 +276,7 @@ au BufWritePre *.html :%s/\s\+$//e
 au BufNewFile * set noeol
 au BufRead,BufNewFile *.go set filetype=go
 au BufRead,BufNewFile *.rs set filetype=rust
+au BufRead,BufNewFile *.ejs set filetype=html
 
 " Format file
 nmap <leader>fef ggVG=
