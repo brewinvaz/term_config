@@ -26,7 +26,7 @@ Vim Configuration
 2. Copy BufOnly.vim to $HOME
 3. Install Vundle manually 
 ```sh
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim 
+git clone git@github.com:VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim 
 ```
 4. Comment colorscheme so that vimrc loads correctly
 ```sh
