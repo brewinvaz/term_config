@@ -79,7 +79,7 @@ source ~/.vimrc
 
 ### WSL2 GUI Support
 
-1. As of September 2020, WSL2 does not support a GUI OOTB, please refer to [https://github.com/brewinvaz/dotfiles/blob/master/ubuntu_gui_config.md]this guide to install XRDP.
+1. As of September 2020, WSL2 does not support a GUI OOTB, please refer to [this](https://github.com/brewinvaz/dotfiles/blob/master/ubuntu_gui_config.md) guide to install XRDP.
 
 ### Flake8 Config (Python Projects)
 
