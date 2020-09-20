@@ -25,6 +25,12 @@ cp tmux.conf to ~/.tmux.conf
 sudo apt update
 sudo apt install ranger
 ```
+6. Install Ranger support for Image Previews with w3m (https://github.com/ranger/ranger/wiki/Image-Previews)
+```sh
+sudo apt update
+sudo apt install e2m
+```
+7. Ensure Ranger config (rc.conf) is updated to enable image previews
 
 ## Code Editor Configuration
 
