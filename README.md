@@ -20,6 +20,11 @@ Steps to follow
 ```sh
 cp tmux.conf to ~/.tmux.conf
 ```
+5. Install Ranger (Unix)
+```sh
+sudo apt update
+sudo apt install ranger
+```
 
 ## Code Editor Configuration
 
