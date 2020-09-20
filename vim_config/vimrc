@@ -18,6 +18,11 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tmhedberg/SimpylFold'
 
+" File system navigation etc.
+Plugin 'francoiscabrol/ranger.vim'
+" Ranger needs this additional plugin for neovim
+Plugin 'rbgrouleff/bclose.vim'
+
 " Find in files plugin
 Plugin 'mileszs/ack.vim'
 
@@ -39,6 +44,9 @@ Plugin 'zxqfl/tabnine-vim'
 " Color Scheme Plugins
 Plugin 'morhetz/gruvbox'
 Plugin 'elzr/vim-json'
+
+" Font Plugins for Glyphs
+Plugin 'ryanoasis/vim-devicons'
 
 " Javascript Plugins
 Plugin 'jelera/vim-javascript-syntax'
@@ -106,8 +114,8 @@ set autoindent
 
 " Other file type specific settings
 au BufRead,BufNewFile *.htm,*.html,*.css setlocal tabstop=2 shiftwidth=2 softtabstop=2
-au BufNewFile,BufRead *.py
-    \ set fileformat=unix
+au BufNewFile,BufRead *.py set fileformat=unix
+
 " Flag unnecessary whitespace
 highlight BadWhitespace ctermbg=red guibg=red
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
