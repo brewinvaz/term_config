@@ -32,7 +32,7 @@ git clone git@github.com:alexanderjeurissen/ranger_devicons.git ~/.config/ranger
 # Add the following to rc.conf
 default_linemode devicons
 ```
-7. If devicon glyphs are not available, patch the system font or install a new font (https://github.com/ryanoasis/nerd-fonts#font-patcher)
+7. If devicon glyphs are not available, patch the system font or install a new font (https://github.com/ryanoasis/nerd-fonts#font-patcher).
 8. Install Ranger support for Image Previews with w3m (https://github.com/ranger/ranger/wiki/Image-Previews)
 ```sh
 sudo apt update
@@ -76,6 +76,10 @@ source ~/.vimrc
 ```
 
 ## Other Configuration
+
+### WSL2 GUI Support
+
+1. As of September 2020, WSL2 does not support a GUI OOTB, please refer to [https://github.com/brewinvaz/dotfiles/blob/master/ubuntu_gui_config.md]this guide to install XRDP.
 
 ### Flake8 Config (Python Projects)
 
