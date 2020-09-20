@@ -25,12 +25,20 @@ cp tmux.conf to ~/.tmux.conf
 sudo apt update
 sudo apt install ranger
 ```
-6. Install Ranger support for Image Previews with w3m (https://github.com/ranger/ranger/wiki/Image-Previews)
+6. Install Ranger Dev Icons and update rc.confg
+```sh
+git clone git@github.com:alexanderjeurissen/ranger_devicons.git ~/.config/ranger/plugins/ranger_devicons
+
+# Add the following to rc.conf
+default_linemode devicons
+```
+7. If devicon glyphs are not available, patch the system font or install a new font (https://github.com/ryanoasis/nerd-fonts#font-patcher)
+8. Install Ranger support for Image Previews with w3m (https://github.com/ranger/ranger/wiki/Image-Previews)
 ```sh
 sudo apt update
 sudo apt install e2m
 ```
-7. Ensure Ranger config (rc.conf) is updated to enable image previews
+9. Ensure Ranger config (rc.conf) is updated to enable image previews
 
 ## Code Editor Configuration
 
