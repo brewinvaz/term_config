@@ -34,3 +34,9 @@ startxfce4
 ```sh
 sudo /etc/init.d/xrdp start
 ```
+
+### Fix to allow for multiple xrdp sessions [Black Screen Fix](http://catch22cats.blogspot.com/2018/05/xrdp-blank-screen-with-ubuntu-1804.html)
+#### Add before the commented lines above
+unset DBUS_SESSION_BUS_ADDRESS
+unset XDG_RUNTIME_DIR
+. $HOME/.profile
