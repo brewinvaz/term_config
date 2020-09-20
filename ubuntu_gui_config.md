@@ -1,6 +1,6 @@
 # Ubuntu GUI commands:
 
-## Source: [https://www.youtube.com/watch?v=IL7Jd9rjgrM&ab_channel=DavidBombal](link)
+## Source: [Video](https://www.youtube.com/watch?v=IL7Jd9rjgrM&ab_channel=DavidBombal)
 
 ### Command Line
 ```sh
