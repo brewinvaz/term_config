@@ -1,17 +1,17 @@
 Steps to follow
 ===============
 
-# Terminal Configuration
+## Terminal Configuration
 
-## iTerm2 (macOS)
+### iTerm2 (macOS)
 1. Import gruvbox-dark colorscheme
 
-## Terminal App (Windows 10)
+### Terminal App (Windows 10)
 1. Import Terminal App (enable WSL2 and install any *nix flavor)
 
 ---------------------
 
-# Shell Configuration
+## Shell Configuration
 
 1. Install Zsh (https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)
 2. Install Oh My Zsh for Zsh configuration management (https://github.com/ohmyzsh/ohmyzsh)
@@ -19,7 +19,7 @@ Steps to follow
 
 ---------------------
 
-# Code Editor Configuration
+## Code Editor Configuration
 
 Neovim
 ------
