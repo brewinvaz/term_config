@@ -81,6 +81,11 @@ source ~/.vimrc
 
 1. As of September 2020, WSL2 does not support a GUI OOTB, please refer to [this](https://github.com/brewinvaz/dotfiles/blob/master/ubuntu_gui_config.md) guide to install XRDP.
 
+### Ubuntu Clipboard
+```sh
+sudo apt install xsel
+```
+
 ### Flake8 Config (Python Projects)
 
 1. Copy flake8 to the user's home directory
