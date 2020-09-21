@@ -9,7 +9,7 @@ Steps to follow
 
 ### Terminal App (Windows 10)
 
-1. Import Terminal App (enable WSL2 and install any *nix flavor)
+1. Install Terminal App (enable WSL2 and install any *nix flavor)
 
 ## Shell Configuration
 
