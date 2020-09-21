@@ -85,7 +85,7 @@ let mapleader=","
 filetype plugin indent on
 set number
 set cursorline
-set clipboard=unnamed
+set clipboard=unnamedplus
 set encoding=utf-8
 set nowrap
 set hlsearch
