@@ -32,7 +32,7 @@ git clone git@github.com:alexanderjeurissen/ranger_devicons.git ~/.config/ranger
 # Add the following to rc.conf
 default_linemode devicons
 ```
-7. If devicon glyphs are not available, patch the system font or install a new font (https://github.com/ryanoasis/nerd-fonts#font-patcher).
+7. If devicon glyphs are not available, patch the system font or install a new font (https://github.com/ryanoasis/nerd-fonts).
 8. Install Ranger support for Image Previews with w3m (https://github.com/ranger/ranger/wiki/Image-Previews)
 ```sh
 sudo apt update
