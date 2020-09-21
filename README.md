@@ -30,15 +30,18 @@ sudo apt install ranger
 git clone git@github.com:alexanderjeurissen/ranger_devicons.git ~/.config/ranger/plugins/ranger_devicons
 
 # Add the following to rc.conf
+
 default_linemode devicons
 ```
 7. If devicon glyphs are not available, patch the system font or install a new font (https://github.com/ryanoasis/nerd-fonts).
 ```sh
-" If using Terminal under Windows 10, CascadiaCode is the default font. It's a beautiful font! Just download the font and patch it.
+" If using Terminal under Windows 10, CascadiaCode is the default font. It's a beautiful font! Just download the font source files and patch it.
 " In the cloned repo, execute the following
+
 ./font-patcher /mnt/c/Users/BrewinVaz/Downloads/CascadiaCode-2009.14/ttf/static/CascadiaCode-Regular.ttf
 
-" You might have to create a symlink for python
+" Create a symlink for python3, if required
+
 sudo ln -s /usr/bin/pythonX.X /usr/bin/python
 ```
 8. Install Ranger support for Image Previews with w3m (https://github.com/ranger/ranger/wiki/Image-Previews)
