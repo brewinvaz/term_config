@@ -16,6 +16,9 @@ Steps to follow
 1. Install Zsh (https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)
 2. Install Oh My Zsh for Zsh configuration management (https://github.com/ohmyzsh/ohmyzsh)
 3. Optionally, install the powerline10K Zsh theme (https://github.com/romkatv/powerlevel10k)
+```sh
+p10k configure
+```
 4. Copy tmux.conf 
 ```sh
 cp tmux.conf to ~/.tmux.conf
@@ -38,7 +41,7 @@ default_linemode devicons
 " If using Terminal under Windows 10, CascadiaCode is the default font. It's a beautiful font! Just download the font source files and patch it.
 " In the cloned repo, execute the following
 
-./font-patcher /mnt/c/Users/BrewinVaz/Downloads/CascadiaCode-2009.14/ttf/static/CascadiaCode-Regular.ttf
+./font-patcher /mnt/c/Users/USERPROFILE/Downloads/CascadiaCode-2009.14/ttf/static/CascadiaCode-Regular.ttf
 
 " Create a symlink for python3, if required
 
