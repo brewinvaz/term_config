@@ -95,9 +95,14 @@ source ~/.vimrc
 
 1. Copy wslconfig to C:\Users\<profilename>\.wslconfig
 
-### WSL2 GUI Support
+### WSL2 GUI Support (XRDP)
 
 1. As of September 2020, WSL2 does not support a GUI OOTB, please refer to [this](https://github.com/brewinvaz/dotfiles/blob/master/ubuntu_gui_config.md) guide to install XRDP.
+
+### [OR] WSL2 GUI Support (X Server)
+
+1. Refer to [this](https://wiki.ubuntu.com/WSL#Running_Graphical_Applications) guide. YouTube [Video](https://www.youtube.com/watch?v=ymV7j003ETA&ab_channel=GaryExplains).
+2. Use VcXsrv as the X Server on Windows 10.
 
 ### Ubuntu Clipboard (Optional)
 
