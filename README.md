@@ -95,7 +95,7 @@ source ~/.vimrc
 
 1. Copy wslconfig to C:\Users\<profilename>\.wslconfig
 
-### WSL2 GUI Support (XRDP)
+### WSL2 GUI Support (XRDP) - X Windows is the preferred options. See below.
 
 1. As of September 2020, WSL2 does not support a GUI OOTB, please refer to [this](https://github.com/brewinvaz/dotfiles/blob/master/ubuntu_gui_config.md) guide to install XRDP.
 
