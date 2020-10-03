@@ -104,6 +104,9 @@ source ~/.vimrc
 1. Refer to [this](https://wiki.ubuntu.com/WSL#Running_Graphical_Applications) guide. YouTube [Video](https://www.youtube.com/watch?v=ymV7j003ETA&ab_channel=GaryExplains).
 2. Use VcXsrv as the X Server on Windows 10.
 
+### Setting up a Linux Dev Environment on Windows with WSL2, etc.
+1. See [this](https://www.youtube.com/watch?v=idW-an99TAM&t=1s&ab_channel=NickJanetakis) video.
+
 ### Ubuntu Clipboard (Optional)
 
 1. :checkhealth shows a warning if clipboard is not present. Ubuntu headless does not have system clipboard. Ignore this warning for Ubuntu headless.
